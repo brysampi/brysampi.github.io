@@ -156,11 +156,11 @@
     // test.onmousemove = function (e) {
     //     console.log(e.clientX);
     // };
-    window.addEventListener('mouseenter',(e)=>{
+    window.addEventListener('mouseenter', (e) => {
         // cursor.style.display = 'block';
         console.log('awe');
     })
-    window.addEventListener('mouseleave',(e)=>{
+    window.addEventListener('mouseleave', (e) => {
         cursor.style.display = 'none';
     })
     window.addEventListener('mousemove', (e) => {
@@ -173,11 +173,17 @@
         // cursor.setAttribute('data-fromTop', (cursor.offsetTop - scrollY))
 
     })
-    text.addEventListener('mouseover', e => {
+    document.addEventListener('mouseover', e => {
         console.log('aw');
-        cursor.style.display = 'none';
-        cursor2.style.display = 'block';
+        cursor.style.display = 'block';
+        cursor2.style.display = 'none';
+        text.addEventListener('mouseover', e => {
+            console.log('aw');
+            cursor.style.display = 'none';
+            cursor2.style.display = 'block';
+        })
     })
+
     window.addEventListener('mousedown', (e) => {
         cursor.style.height = '50px';
         cursor.style.width = '50px';
