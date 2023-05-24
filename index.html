@@ -1,12 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: #3e3c2f;
+        /* cursor: none; */
+    }
+
+
+
+    .navbar {
+        /* background-color: aqua; */
+        /* padding: 100px; */
+        text-align: center;
+    }
+
+    .navbar_logo {
+        /* text-align: left; */
+        float: left;
+    }
+
+    .navbar_logo_img,
+    .navbar_select_img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .navbar_select {
+        /* text-align: right; */
+        float: right;
+    }
+
+    /*  */
+    .main {
+        text-align: center;
+
+        font-family: "Comic Sans MS";
+        z-index: 1;
+    }
+
+    .main_header {
+        font-size: 1.5rem;
+        font-weight: bolder;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #e9dea1;
+        color: #e9dea1;
+        padding-top: 40vh;
+        z-index: 1;
+    }
+
+    /* Remove Fill Color in Text */
+    .text_outline {
+        color: transparent;
+    }
+
+    .main_text {
+        color: #ffffff;
+        font-size: 1rem;
+    }
+
+    /* .main_header .span:hover{
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+    } */
+
+    .cursor {
+        position: absolute;
+        left: 0;
+        top: 0;
+        border: 2px solid white;
+        width: 20px;
+        height: 20px;
+        border-radius: 50px;
+        transform: translate(-50%, -50%);
+        transition: width 0.1s ease-in-out, height 0.1s ease-in-out;
+    }
+
+    .cursor2 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        /* border: 2px solid white; */
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        z-index: 0;
+        transform: translate(-50%, -50%);
+        transition: width 0.1s ease-in-out, height 0.1s ease-in-out;
+        display: none;
+    }
+
+    @media only screen and (min-width: 600px) {
+        .main_header {
+            font-size: 3rem;
+        }
+
+        .main_text {
+            font-size: 1.2rem;
+        }
+    }
+</style>
+
 <body>
-    Test
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar_logo">
+            <img src="image/JBv3.svg" class="navbar_logo_img" alt="">
+        </div>
+        <div class="navbar_select">
+            <img src="image/JBv2_shadow.png" class="navbar_select_img" alt="">
+        </div>
+    </div>
+    <!-- Main Body -->
+    <div class="main">
+        <div class="main_header">
+            <span class="text_outline">HI, I'M</span> <span class="text_main">JOHN BRYAN</span>
+            <br>
+            <span class="text_outline">BUT YOU CAN CALL ME</span> <span class="text_main">BELL</span>
+        </div>
+        <div class="main_text">
+            I'm a Web Developer
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer"></div>
+    <!-- Curson -->
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
+    <!-- Curson -->
 </body>
+
 </html>
+<script>
+    const cursor = document.querySelector('.cursor');
+    const cursor2 = document.querySelector('.cursor2');
+    const text = document.querySelector('.text_main');
+
+    // const test = document.querySelector('.text_outline');
+    // test.onmousemove = function (e) {
+    //     console.log(e.clientX);
+    // };
+    window.addEventListener('mouseenter',(e)=>{
+        // cursor.style.display = 'block';
+        console.log('awe');
+    })
+    window.addEventListener('mouseleave',(e)=>{
+        cursor.style.display = 'none';
+    })
+    window.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.pageX + 'px';
+        cursor.style.top = e.pageY + 'px';
+        cursor2.style.left = e.pageX + 'px';
+        cursor2.style.top = e.pageY + 'px';
+        // e.target.closest('.text_outline');
+        // console.log(test.hover);
+        // cursor.setAttribute('data-fromTop', (cursor.offsetTop - scrollY))
+
+    })
+    text.addEventListener('mouseover', e => {
+        console.log('aw');
+        cursor.style.display = 'none';
+        cursor2.style.display = 'block';
+    })
+    window.addEventListener('mousedown', (e) => {
+        cursor.style.height = '50px';
+        cursor.style.width = '50px';
+    })
+    window.addEventListener('mouseup', (e) => {
+        cursor.style.height = '20px';
+        cursor.style.width = '20px';
+    })
+    //  window.addEventListener('pointermove',e=>{
+    //     const dot = document.getElementById(e.pointerId);
+    //     console.log(dot);
+    //  })
+
+    $('.text_outline:nth-child(2)').hover(function () {
+        // On Hover
+        console.log('text');
+    }, function () {
+        // Out Hover
+        console.log('awe');
+    })
+</script>
