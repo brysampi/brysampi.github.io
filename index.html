@@ -6,9 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
-
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- /JQuery -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="font-awesome/font-awesome_6.4.0_all.min.css">
+    <script src="font-awesome/font-awesome_6.4.0_all.min.js"></script>
+    <!-- /Font Awesome -->
 </head>
 <style>
     html,
@@ -27,15 +32,17 @@
         /* background-color: aqua; */
         /* padding: 100px; */
         text-align: center;
+        padding: 10vh 10vh 25vh 10vh;
     }
 
-    .navbar_logo {
+    .navbar__logo {
         /* text-align: left; */
         float: left;
+
     }
 
-    .navbar_logo_img,
-    .navbar_select_img {
+    .navbar__logo--img,
+    .navbar__logo--img__select {
         height: 50px;
         width: 50px;
     }
@@ -51,16 +58,18 @@
 
         font-family: "Comic Sans MS";
         z-index: 1;
+
     }
 
-    .main_header {
-        font-size: 1.5rem;
+    .main__header {
+        font-size: 3rem;
         font-weight: bolder;
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: #e9dea1;
         color: #e9dea1;
         padding-top: 40vh;
         z-index: 1;
+        padding: 0;
     }
 
     /* Remove Fill Color in Text */
@@ -68,12 +77,79 @@
         color: transparent;
     }
 
-    .main_text {
+    .main__body {
         color: #ffffff;
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
-    /* .main_header .span:hover{
+    .main__footer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        color: #ffffff;
+    }
+
+    .main__footer div:nth-child(1) {
+        margin-right: 10vw;
+    }
+
+    .main__footerv2 {
+        margin-top: 20px;
+    }
+
+    .main__footerv2--text {
+        text-decoration: none;
+        color: #ffffff;
+        position: relative;
+        display: inline-block;
+        font-size: 1.5rem;
+    }
+
+    .main__footerv2--text::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #ffffff;
+        transition: width 0.2s ease-in;
+    }
+
+    .main__footerv2--text:hover::before {
+        width: 100%;
+    }
+
+
+    /* .main__footerv2--text{
+        text-decoration: none;
+        color: #ffffff;
+        
+    }
+    .main__footerv2--text:hover{
+        color: aqua;
+    }
+    .main__footerv2--text::after{
+        content: '';
+        width: 0;
+    }
+    .main__footerv2--text:hover::after{
+        width: 100%;
+        transition: width 0.3s linear;
+    } */
+
+    /* .main__footerv2--text:after{
+        content: '';
+        position: absolute;
+        background-color: aqua;
+        height: 3px;
+        width: 100;
+        left: 0;
+        bottom: -10px;
+
+    } */
+
+    /* .main__header .span:hover{
         transform: scale(1.5);
         -webkit-transform: scale(1.5);
         -ms-transform: scale(1.5);
@@ -106,13 +182,48 @@
         display: none;
     }
 
-    @media only screen and (min-width: 600px) {
-        .main_header {
-            font-size: 3rem;
+    @media only screen and (max-width: 724px) {
+        .navbar {
+            padding: 5vh 5vh 25vh 5vh;
         }
 
-        .main_text {
+        .navbar__logo--img,
+        .navbar__logo--img__select {
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+    @media only screen and (max-width: 477px) {
+        .main__header {
+            font-size: 1.5rem;
+        }
+
+        .main__body {
+            font-size: 1rem;
+        }
+
+        .navbar {
+            padding: 2vh 2vh 25vh 2vh;
+        }
+
+        .main__header .navbar__logo--img,
+        .navbar__logo--img__select {
+            height: 30px;
+            width: 30px;
+        }
+        .main__footerv2--text{
             font-size: 1.2rem;
+        }
+
+        .main__footer {
+            display: block;
+
+        }
+
+        .main__footer div:nth-child(1) {
+            margin-right: 0;
+            padding-bottom: 15px;
         }
     }
 </style>
@@ -120,82 +231,85 @@
 <body>
     <!-- Navbar -->
     <div class="navbar">
-        <div class="navbar_logo">
-            <img src="image/JBv3.svg" class="navbar_logo_img" alt="">
+        <div class="navbar__logo">
+            <img src="image/JBv2_shadow.png" class="navbar__logo--img" alt="">
         </div>
         <div class="navbar_select">
-            <img src="image/JBv2_shadow.png" class="navbar_select_img" alt="">
+            <img src="image/JBv2_shadow.png" class="navbar__logo--img__select" alt="">
         </div>
     </div>
     <!-- Main Body -->
     <div class="main">
-        <div class="main_header">
+        <div class="main__header">
             <span class="text_outline">HI, I'M</span> <span class="text_main">JOHN BRYAN</span>
             <br>
             <span class="text_outline">BUT YOU CAN CALL ME</span> <span class="text_main">BELL</span>
         </div>
-        <div class="main_text">
+        <div class="main__body">
             I'm a Web Developer
         </div>
+        <div class="main__footerv2">
+            <!-- <div class=""> -->
+            <a href="https://brysampi.github.io/about/"class="main__footerv2--text">More Info <i class="fa-regular fa-block-question fa-beat" style="color: #ffffff;"></i></a>
+            <!-- </div> -->
+        </div>
+        <!-- <div class="main__footer">
+            <div>
+                More Info
+            </div>
+            <div class="main__footer--left">
+                My Projects
+            </div>
+            <div class="main__footer--right">
+                About Me
+            </div>
+        </div> -->
     </div>
     <!-- Footer -->
     <div class="footer"></div>
     <!-- Curson -->
-    <div class="cursor"></div>
-    <div class="cursor2"></div>
+    <!-- <div class="cursor"></div>
+    <div class="cursor2"></div> -->
     <!-- Curson -->
 </body>
 
 </html>
 <script>
-    const cursor = document.querySelector('.cursor');
-    const cursor2 = document.querySelector('.cursor2');
-    const text = document.querySelector('.text_main');
+    // const cursor = document.querySelector('.cursor');
+    // const cursor2 = document.querySelector('.cursor2');
+    // const text = document.querySelector('.text_main');
+    // window.addEventListener('mouseenter', (e) => {
+    //     console.log('awe');
+    // })
+    // window.addEventListener('mouseleave', (e) => {
+    //     cursor.style.display = 'none';
+    // })
+    // window.addEventListener('mousemove', (e) => {
+    //     cursor.style.left = e.pageX + 'px';
+    //     cursor.style.top = e.pageY + 'px';
+    //     cursor2.style.left = e.pageX + 'px';
+    //     cursor2.style.top = e.pageY + 'px';
 
-    // const test = document.querySelector('.text_outline');
-    // test.onmousemove = function (e) {
-    //     console.log(e.clientX);
-    // };
-    window.addEventListener('mouseenter', (e) => {
-        // cursor.style.display = 'block';
-        console.log('awe');
-    })
-    window.addEventListener('mouseleave', (e) => {
-        cursor.style.display = 'none';
-    })
-    window.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.pageX + 'px';
-        cursor.style.top = e.pageY + 'px';
-        cursor2.style.left = e.pageX + 'px';
-        cursor2.style.top = e.pageY + 'px';
-        // e.target.closest('.text_outline');
-        // console.log(test.hover);
-        // cursor.setAttribute('data-fromTop', (cursor.offsetTop - scrollY))
+    // })
+    // document.addEventListener('mouseover', e => {
+    //     console.log('aw');
+    //     cursor.style.display = 'block';
+    //     cursor2.style.display = 'none';
+    //     text.addEventListener('mouseover', e => {
+    //         console.log('aw');
+    //         cursor.style.display = 'none';
+    //         cursor2.style.display = 'block';
+    //     })
+    // })
 
-    })
-    document.addEventListener('mouseover', e => {
-        console.log('aw');
-        cursor.style.display = 'block';
-        cursor2.style.display = 'none';
-        text.addEventListener('mouseover', e => {
-            console.log('aw');
-            cursor.style.display = 'none';
-            cursor2.style.display = 'block';
-        })
-    })
-
-    window.addEventListener('mousedown', (e) => {
-        cursor.style.height = '50px';
-        cursor.style.width = '50px';
-    })
-    window.addEventListener('mouseup', (e) => {
-        cursor.style.height = '20px';
-        cursor.style.width = '20px';
-    })
-    //  window.addEventListener('pointermove',e=>{
-    //     const dot = document.getElementById(e.pointerId);
-    //     console.log(dot);
-    //  })
+    // window.addEventListener('mousedown', (e) => {
+    //     cursor.style.height = '50px';
+    //     cursor.style.width = '50px';
+    // })
+    // window.addEventListener('mouseup', (e) => {
+    //     cursor.style.height = '20px';
+    //     cursor.style.width = '20px';
+    // })
 
     $('.text_outline:nth-child(2)').hover(function () {
         // On Hover
