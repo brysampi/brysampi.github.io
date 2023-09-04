@@ -16,13 +16,24 @@
     <!-- /Font Awesome -->
 </head>
 <style>
+    .light {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background: radial-gradient(circle at var(--x) var(--y), rgb(255 255 255 / 0%) 5%, rgb(0 0 0 / 24%) 50%);
+        /* z-index: -1; */
+
+    }
     html,
     body {
         margin: 0;
         padding: 0;
         height: 100vh;
         width: 100vw;
-        background-color: #3e3c2f;
+        background-color: #925f17;
         /* cursor: none; */
     }
 
@@ -212,7 +223,8 @@
             height: 30px;
             width: 30px;
         }
-        .main__footerv2--text{
+
+        .main__footerv2--text {
             font-size: 1.2rem;
         }
 
@@ -229,6 +241,7 @@
 </style>
 
 <body>
+    <div class="light"></div>
     <!-- Navbar -->
     <div class="navbar">
         <div class="navbar__logo">
@@ -250,7 +263,8 @@
         </div>
         <div class="main__footerv2">
             <!-- <div class=""> -->
-            <a href="https://brysampi.github.io/about/"class="main__footerv2--text">More Info <i class="fa-regular fa-block-question fa-beat" style="color: #ffffff;"></i></a>
+            <a href="https://brysampi.github.io/about/" class="main__footerv2--text">More Info <i
+                    class="fa-regular fa-block-question fa-beat" style="color: #ffffff;"></i></a>
             <!-- </div> -->
         </div>
         <!-- <div class="main__footer">
@@ -317,5 +331,12 @@
     }, function () {
         // Out Hover
         console.log('awe');
+    })
+    var pos = document.documentElement;
+    pos.style.setProperty('--x', '50%')
+    pos.style.setProperty('--y', '50%')
+    pos.addEventListener('mousemove', e => {
+        pos.style.setProperty('--x', e.clientX + 'px')
+        pos.style.setProperty('--y', e.clientY + 'px')
     })
 </script>
