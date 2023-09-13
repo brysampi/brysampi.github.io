@@ -7,15 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> -->
     <!-- /JQuery -->
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="font-awesome/font-awesome_6.4.0_all.min.css">
-    <script src="font-awesome/font-awesome_6.4.0_all.min.js"></script>
+    <!-- <link rel="stylesheet" href="font-awesome/font-awesome_6.4.0_all.min.css">
+    <script src="font-awesome/font-awesome_6.4.0_all.min.js"></script> -->
     <!-- /Font Awesome -->
 </head>
 <style>
+    :root {
+        --background-color: #ffda2a;
+        --main-font-family: "Comic Sans MS";
+        --main-color: #ffffff;
+        --main-color-outline: #ffffff;
+    }
+
     .light {
         position: fixed;
         left: 0;
@@ -23,20 +30,41 @@
         width: 100%;
         height: 100%;
         pointer-events: none;
-        background: radial-gradient(circle at var(--x) var(--y), rgb(255 255 255 / 0%) 5%, rgb(0 0 0 / 24%) 50%);
-        /* z-index: -1; */
+        /* background: radial-gradient(circle at var(--x) var(--y), rgb(255, 0, 0) 5%, rgb(68, 0, 255) 50%); */
+        /* background: radial-gradient(circle at var(--x) var(--y), #ffda2a 5%, #ffda2a 50%); */
+        background: radial-gradient(circle at var(--x) var(--y), rgb(255, 219, 41) 5%, rgba(46, 46, 46, 0.15) 70%);
+        /* #fec220 */
+        z-index: -1;
 
     }
+
+    body {
+        background-color: var(--background-color);
+    }
+
     html,
     body {
         margin: 0;
         padding: 0;
         height: 100vh;
         width: 100vw;
-        background-color: #925f17;
+
         /* cursor: none; */
     }
 
+    /* .stroke {
+        position: fixed;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .stroke:nth-child(1) {
+        width: 10px;
+    } */
 
 
     .navbar {
@@ -44,6 +72,12 @@
         /* padding: 100px; */
         text-align: center;
         padding: 10vh 10vh 25vh 10vh;
+
+    }
+
+    .navbar_container {
+        max-width: 1000px;
+        background-color: blue;
     }
 
     .navbar__logo {
@@ -63,108 +97,146 @@
         float: right;
     }
 
-    /*  */
+    /* Main */
     .main {
         text-align: center;
-
-        font-family: "Comic Sans MS";
+        font-family: var(--main-font-family);
         z-index: 1;
-
-    }
-
-    .main__header {
-        font-size: 3rem;
-        font-weight: bolder;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #e9dea1;
-        color: #e9dea1;
-        padding-top: 40vh;
-        z-index: 1;
-        padding: 0;
-    }
-
-    /* Remove Fill Color in Text */
-    .text_outline {
-        color: transparent;
-    }
-
-    .main__body {
-        color: #ffffff;
-        font-size: 1.2rem;
-    }
-
-    .main__footer {
-        margin-top: 20px;
         display: flex;
         justify-content: center;
-        color: #ffffff;
     }
 
-    .main__footer div:nth-child(1) {
-        margin-right: 10vw;
+    .main__container {
+        max-width: 1000px;
+        min-width: 320px;
+        /* background-color: aqua; */
+    }
+
+    .text_outline {
+        font-size: 4rem;
+        font-weight: bolder;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: var(--main-color-outline);
+        color: var(--main-color);
+        color: transparent;
+        /* background: radial-gradient(circle at var(--x) var(--y), rgb(184, 153, 0) 50%, rgba(0, 0, 0, 0) 100%); */
+        background: radial-gradient(circle at var(--x) var(--y), rgb(167 167 167) 50%, rgba(0, 0, 0, 0) 100%);
+        -webkit-background-clip: text;
+
+    }
+
+    .text_main {
+        font-size: 4rem;
+        font-weight: bolder;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: var(--main-color-outline);
+        color: var(--main-color);
     }
 
     .main__footerv2 {
-        margin-top: 20px;
+        position: relative;
+        display: flex;
+        justify-content: center;
     }
 
     .main__footerv2--text {
-        text-decoration: none;
-        color: #ffffff;
-        position: relative;
-        display: inline-block;
-        font-size: 1.5rem;
-    }
-
-    .main__footerv2--text::before {
-        content: '';
         position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0;
-        height: 2px;
-        background-color: #ffffff;
-        transition: width 0.2s ease-in;
+        top: 85px;
+        left: 55px;
+        text-decoration: none;
+        color: var(--main-color);
     }
 
-    .main__footerv2--text:hover::before {
+    .main__footer--button {
+        position: relative;
+        text-align: center;
+        width: 190px;
+        cursor: pointer;
+        /*  */
+        -webkit-transition-property: all;
+        -webkit-transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease;
+        -webkit-filter: drop-shadow(1px 1px 1px #a17100);
+        filter: drop-shadow(1px 1px 1px #a17100);
+
+        &:hover {
+            -webkit-filter: drop-shadow(5px 5px 5px #a17100);
+            filter: drop-shadow(5px 5px 5px #a17100);
+            transform: scale(1.1);
+        }
+    }
+
+    .main__footerv2 img {
         width: 100%;
+        height: 200px;
     }
-
 
     /* .main__footerv2--text{
-        text-decoration: none;
-        color: #ffffff;
         
-    }
-    .main__footerv2--text:hover{
-        color: aqua;
-    }
-    .main__footerv2--text::after{
-        content: '';
-        width: 0;
-    }
-    .main__footerv2--text:hover::after{
-        width: 100%;
-        transition: width 0.3s linear;
     } */
 
-    /* .main__footerv2--text:after{
-        content: '';
+
+    .main__background {
+        float: right;
         position: absolute;
-        background-color: aqua;
-        height: 3px;
-        width: 100;
-        left: 0;
-        bottom: -10px;
+        z-index: -1;
+    }
 
-    } */
+    .main__background--images img {
+        position: absolute;
+    }
 
-    /* .main__header .span:hover{
-        transform: scale(1.5);
-        -webkit-transform: scale(1.5);
-        -ms-transform: scale(1.5);
-    } */
+    .main__background--images img:nth-child(1) {
+        width: 513px;
+        height: 289px;
+        transform: rotate(330deg);
+        /* translate: -400px -50px; */
+        left: -651px;
+        top: -66px;
+    }
+
+    .main__background--images img:nth-child(2) {
+        width: 606px;
+        height: 290px;
+        transform: rotate(346deg);
+        left: -595px;
+        top: -32px;
+    }
+
+    .main__background--images img:nth-child(3) {
+        width: 533px;
+        height: 254px;
+        transform: rotate(342deg);
+        left: -337px;
+        top: -2px;
+    }
+
+    .main__background--images img:nth-child(4) {
+        width: 606px;
+        height: 290px;
+        transform: rotate(354deg);
+        left: -103px;
+        top: -32px;
+    }
+
+    .main__background--images img:nth-child(5) {
+        width: 480px;
+        height: 290px;
+        transform: rotate(338deg);
+        left: -13px;
+        top: -58px;
+    }
+
+    .main__background--images img:nth-child(6) {
+        width: 388px;
+        height: 392px;
+        transform: rotate(332deg);
+        left: 211px;
+        top: -14px;
+    }
+
+
+    /* Main */
 
     .cursor {
         position: absolute;
@@ -203,16 +275,20 @@
             height: 40px;
             width: 40px;
         }
+
+        .main__header .text_outline,
+        .text_main {
+            -webkit-text-stroke-width: 2px;
+            font-size: 2.5rem;
+        }
+
+        /* .main__header {
+            font-size: 4rem;
+            -webkit-text-stroke-width: 3px;
+        } */
     }
 
     @media only screen and (max-width: 477px) {
-        .main__header {
-            font-size: 1.5rem;
-        }
-
-        .main__body {
-            font-size: 1rem;
-        }
 
         .navbar {
             padding: 2vh 2vh 25vh 2vh;
@@ -224,60 +300,75 @@
             width: 30px;
         }
 
-        .main__footerv2--text {
-            font-size: 1.2rem;
+        .main__header .text_outline,
+        .text_main {
+            -webkit-text-stroke-width: 1.5px;
+            font-size: 2rem;
         }
 
-        .main__footer {
-            display: block;
+    }
 
-        }
+    @media only screen and (max-width: 344px) {
 
-        .main__footer div:nth-child(1) {
-            margin-right: 0;
-            padding-bottom: 15px;
+        .main__header .text_outline,
+        .text_main {
+            -webkit-text-stroke-width: 1px;
+            font-size: 1.3rem;
         }
     }
 </style>
 
 <body>
+    <!-- <div class="stroke">
+        <img src="image/stroke/1.png" alt="">
+    </div> -->
     <div class="light"></div>
     <!-- Navbar -->
     <div class="navbar">
-        <div class="navbar__logo">
-            <img src="image/JBv2_shadow.png" class="navbar__logo--img" alt="">
+        <div class="navbar__container">
+            <div class="navbar__logo">
+                <img src="image/logo/JBv2_shadow.png" class="navbar__logo--img" alt="">
+            </div>
+            <div class="navbar_select">
+                <img src="image/logo/JBv2_shadow.png" class="navbar__logo--img__select" alt="">
+            </div>
         </div>
-        <div class="navbar_select">
-            <img src="image/JBv2_shadow.png" class="navbar__logo--img__select" alt="">
-        </div>
+
     </div>
     <!-- Main Body -->
     <div class="main">
-        <div class="main__header">
-            <span class="text_outline">HI, I'M</span> <span class="text_main">JOHN BRYAN</span>
-            <br>
-            <span class="text_outline">BUT YOU CAN CALL ME</span> <span class="text_main">BELL</span>
-        </div>
-        <div class="main__body">
-            I'm a Web Developer
-        </div>
-        <div class="main__footerv2">
-            <!-- <div class=""> -->
-            <a href="https://brysampi.github.io/about/" class="main__footerv2--text">More Info <i
-                    class="fa-regular fa-block-question fa-beat" style="color: #ffffff;"></i></a>
-            <!-- </div> -->
-        </div>
-        <!-- <div class="main__footer">
-            <div>
-                More Info
+        <div class="main__container">
+            <div class="main__header">
+                <span class="text_outline">HI, I'M </span> <span class="text_main">JOHN BRYAN</span>
+                <br>
+                <span class="text_outline">BUT YOU CAN CALL ME </span> <span class="text_main">BELL</span>
             </div>
-            <div class="main__footer--left">
-                My Projects
+            <div class="main__body">
+                I'm a Web Developer
             </div>
-            <div class="main__footer--right">
-                About Me
+            <div class="main__footerv2">
+                <div class="main__footer--button">
+                    <a href="https://brysampi.github.io/about/" target="_blank">
+                        <img src="image/stroke/14.png" alt="">
+                    </a>
+                    <span class="main__footerv2--text">More Info
+                        <i class="fa-regular fa-block-question fa-beat" style="color: #ffffff;"></i>
+                    </span>
+
+                </div>
             </div>
-        </div> -->
+        </div>
+
+        <div class="main__background">
+            <div class="main__background--images">
+                <img src="image/stroke/1.png" alt="">
+                <img src="image/stroke/2.png" alt="">
+                <img src="image/stroke/3.png" alt="">
+                <img src="image/stroke/4.png" alt="">
+                <img src="image/stroke/5.png" alt="">
+                <img src="image/stroke/7.png" alt="">
+            </div>
+        </div>
     </div>
     <!-- Footer -->
     <div class="footer"></div>
@@ -325,13 +416,13 @@
     //     cursor.style.width = '20px';
     // })
 
-    $('.text_outline:nth-child(2)').hover(function () {
-        // On Hover
-        console.log('text');
-    }, function () {
-        // Out Hover
-        console.log('awe');
-    })
+    // $('.text_outline:nth-child(2)').hover(function () {
+    //     // On Hover
+    //     console.log('text');
+    // }, function () {
+    //     // Out Hover
+    //     console.log('awe');
+    // })
     var pos = document.documentElement;
     pos.style.setProperty('--x', '50%')
     pos.style.setProperty('--y', '50%')
