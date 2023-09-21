@@ -35,7 +35,7 @@
         /* background: radial-gradient(circle at var(--x) var(--y), #ffda2a 5%, #ffda2a 50%); */
         /* background: radial-gradient(circle at var(--x) var(--y), rgb(255, 219, 41) 5%, rgba(255, 219, 41, 0.267) 70%); */
         /* background: radial-gradient(circle at var(--x) var(--y), rgba(255, 186, 26, 50%) 5%, rgba(255, 186, 26, 68%) 70%); */
-        background: radial-gradient(circle at var(--x) var(--y), rgba(255, 186, 26, 50%) 20%, rgba(255, 186, 26, 70%) 50%);
+        background: radial-gradient(circle at var(--x) var(--y), rgba(255, 186, 26, 40%) 20%, rgba(255, 186, 26, 60%) 50%);
         /* #fec220 */
         z-index: -1;
 
@@ -85,7 +85,7 @@
 
     .navbar_container {
         max-width: 1000px;
-        background-color: blue;
+        /* background-color: blue; */
     }
 
     .navbar__logo {
@@ -128,9 +128,17 @@
         color: var(--main-color);
         color: transparent;
         /* background: radial-gradient(circle at var(--x) var(--y), rgb(184, 153, 0) 50%, rgba(0, 0, 0, 0) 100%); */
-        background: radial-gradient(circle at var(--x) var(--y), rgb(167 167 167) 50%, rgba(0, 0, 0, 0) 100%);
+        background: radial-gradient(circle at var(--x2) var(--y2), rgb(167 167 167) 20%, rgba(0, 0, 0, 0) 50%);
+        /* background: radial-gradient(circle at var(--x2) var(--y2), rgb(255, 0, 0) 20%, rgb(0, 26, 255) 50%); */
         -webkit-background-clip: text;
 
+    }
+
+    .main__body {
+        color: var(--main-color);
+        margin: 50px 0 0 0;
+        font-size: 20px;
+        font-weight: 600;
     }
 
     .text_main {
@@ -164,12 +172,12 @@
         -webkit-transition-property: all;
         -webkit-transition-duration: 0.3s;
         -webkit-transition-timing-function: ease;
-        -webkit-filter: drop-shadow(1px 1px 1px #a17100);
-        filter: drop-shadow(1px 1px 1px #a17100);
+        -webkit-filter: drop-shadow(1px 1px 1px #202020b6);
+        filter: drop-shadow(1px 1px 1px #202020b6);
 
         &:hover {
-            -webkit-filter: drop-shadow(5px 5px 5px #a17100);
-            filter: drop-shadow(5px 5px 5px #a17100);
+            -webkit-filter: drop-shadow(5px 5px 5px #202020b6);
+            filter: drop-shadow(5px 5px 5px #202020b6);
             transform: scale(1.1);
         }
     }
@@ -282,7 +290,8 @@
             display: none;
         }
     }
-    @media only screen and (max-width:768px){
+
+    @media only screen and (max-width:768px) {
         .main__footer--button {
             animation: pulse 2s infinite;
         }
@@ -307,6 +316,11 @@
         .text_main {
             -webkit-text-stroke-width: 2px;
             font-size: 2.5rem;
+        }
+
+        .main__body {
+            font-size: 18px;
+            font-weight: 600;
         }
 
         /* .main__header {
@@ -345,6 +359,12 @@
             -webkit-text-stroke-width: 1px;
             font-size: 1.3rem;
         }
+
+        .main__body {
+            margin: 20px 0 0 0;
+            font-size: 15px;
+            font-weight: 500;
+        }
     }
 
     @keyframes pulse {
@@ -378,6 +398,8 @@
     <div class="light"></div>
     <!-- Navbar -->
     <div class="navbar">
+        <input type="checkbox" name="color_changing_test" id="color_changing_test"> 
+        <label for="color_changing_test">change color font test</label>
         <div class="navbar__container">
             <div class="navbar__logo">
                 <img src="image/logo/JBv2_shadow.png" class="navbar__logo--img" alt="">
@@ -403,11 +425,12 @@
                 <div class="main__footer--button">
                     <a href="https://brysampi.github.io/about/" target="_blank">
                         <img src="image/stroke/14.png" alt="">
-                    </a>
-                    <span class="main__footerv2--text">More Info
-                        <i class="fa-regular fa-block-question fa-beat" style="color: #ffffff;"></i>
-                    </span>
 
+
+                        <span class="main__footerv2--text">More Info
+                            <i class="fa-regular fa-block-question fa-beat"></i>
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -477,10 +500,29 @@
     //     console.log('awe');
     // })
     var pos = document.documentElement;
-    pos.style.setProperty('--x', '50%')
+    pos.style.setProperty('--x', '20%')
     pos.style.setProperty('--y', '50%')
+    pos.style.setProperty('--x2', '20%')
+    pos.style.setProperty('--y2', '50%')
     pos.addEventListener('mousemove', e => {
         pos.style.setProperty('--x', e.clientX + 'px')
         pos.style.setProperty('--y', e.clientY + 'px')
+        pos.style.setProperty('--x2', (e.clientX - 200) + 'px')
+        pos.style.setProperty('--y2', e.clientY - 350 + 'px')
     })
+
+    var switch_toggle = document.getElementById('color_changing_test');
+    switch_toggle.addEventListener("change", (event) => {
+        // console.log(switch_toggle.checked)
+        if (switch_toggle.checked) {
+            // console.log('checked')
+            pos.style.setProperty('--main-color', '#000000')
+            pos.style.setProperty('--main-color-outline', '#000000')
+            
+        }else{
+            // console.log('unchecked')
+            pos.style.setProperty('--main-color', '#ffffff')
+            pos.style.setProperty('--main-color-outline', '#ffffff')
+        }
+    });
 </script>
