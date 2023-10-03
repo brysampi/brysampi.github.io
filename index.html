@@ -18,10 +18,17 @@
 <style>
     :root {
         --background-color: #ffda2a;
-        --main-font-family: "Comic Sans MS";
-        --main-color: #ffffff;
-        --main-color-outline: #ffffff;
+        /* --main-font-family: "Comic Sans MS"; */
+        /* --main-font-family: 'testy'; */
+        --main-font-family: 'CustomFont';
+
         --background-color-dark: #ffbb1a;
+
+        /* JS set default color for this */
+        /* --main-color: #ffffff;
+        --main-color-outline: #ffffff;
+        --light-color-a: #30344073;
+        --light-color-b: #1c1d1fd9; */
     }
 
     .light {
@@ -35,7 +42,8 @@
         /* background: radial-gradient(circle at var(--x) var(--y), #ffda2a 5%, #ffda2a 50%); */
         /* background: radial-gradient(circle at var(--x) var(--y), rgb(255, 219, 41) 5%, rgba(255, 219, 41, 0.267) 70%); */
         /* background: radial-gradient(circle at var(--x) var(--y), rgba(255, 186, 26, 50%) 5%, rgba(255, 186, 26, 68%) 70%); */
-        background: radial-gradient(circle at var(--x) var(--y), rgba(255, 186, 26, 40%) 20%, rgba(255, 186, 26, 60%) 50%);
+        /* background: radial-gradient(circle at var(--x) var(--y), rgba(255, 186, 26, 40%) 20%, rgba(255, 186, 26, 60%) 50%); */
+        background: radial-gradient(circle at var(--x) var(--y), var(--light-color-a) 5%, var(--light-color-b) 50%);
         /* #fec220 */
         z-index: -1;
 
@@ -123,7 +131,7 @@
     .text_outline {
         font-size: 4rem;
         font-weight: bolder;
-        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: var(--main-color-outline);
         color: var(--main-color);
         color: transparent;
@@ -389,6 +397,26 @@
             filter: drop-shadow(1px 1px 1px #a17100);
         }
     }
+
+    /* @font-face {
+        font-family: 'comic_sans';
+        src: url("font/comic_sans/ComicSans.ttf");
+    } */
+    @font-face {
+        font-family: 'testy';
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://fonts.gstatic.com/l/font?kit=WWXUljiDYgyJJ8igRvwjKZhbdw_vzQ&skey=a4ba60ff9fc73cf8&v=v19") format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+
+    @font-face {
+        font-family: "CustomFont";
+        /* src: url("CustomFont.eot"); */
+        font-style: normal;
+        font-weight: 400;
+        src: url("font/comic_sans/ComicSans.ttf") format("opentype");
+    }
 </style>
 
 <body>
@@ -398,7 +426,7 @@
     <div class="light"></div>
     <!-- Navbar -->
     <div class="navbar">
-        <input type="checkbox" name="color_changing_test" id="color_changing_test"> 
+        <input type="checkbox" name="color_changing_test" id="color_changing_test">
         <label for="color_changing_test">change color font test</label>
         <div class="navbar__container">
             <div class="navbar__logo">
@@ -500,6 +528,7 @@
     //     console.log('awe');
     // })
     var pos = document.documentElement;
+    setDefaultStyle()
     pos.style.setProperty('--x', '20%')
     pos.style.setProperty('--y', '50%')
     pos.style.setProperty('--x2', '20%')
@@ -518,11 +547,20 @@
             // console.log('checked')
             pos.style.setProperty('--main-color', '#000000')
             pos.style.setProperty('--main-color-outline', '#000000')
-            
-        }else{
+
+            pos.style.setProperty('--light-color-a', '#ffffff36')
+            pos.style.setProperty('--light-color-b', '#ffffff6e')
+
+        } else {
             // console.log('unchecked')
-            pos.style.setProperty('--main-color', '#ffffff')
-            pos.style.setProperty('--main-color-outline', '#ffffff')
+            setDefaultStyle()
         }
     });
+    function setDefaultStyle() {
+        pos.style.setProperty('--main-color', '#ffffff')
+        pos.style.setProperty('--main-color-outline', '#ffffff')
+
+        pos.style.setProperty('--light-color-a', '#30344073')
+        pos.style.setProperty('--light-color-b', '#1c1d1fd9')
+    }
 </script>
