@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>I'm John Bryan</title>
+    <link rel="icon" href="image/logo/JBv2.png" type="image/x-icon">
     <!-- JQuery -->
     <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> -->
@@ -29,6 +30,11 @@
         --main-color-outline: #ffffff;
         --light-color-a: #30344073;
         --light-color-b: #1c1d1fd9; */
+        /* --color-changing-text: white; */
+    }
+
+    #color_changing_test-label {
+        color: var(--color-changing-text);
     }
 
     .light {
@@ -373,6 +379,21 @@
             font-size: 15px;
             font-weight: 500;
         }
+
+        .main__footer--button {
+            width: 130px;
+
+            & a img {
+                height: 115px;
+            }
+
+            & .main__footerv2--text {
+                top: 45px;
+                left: 31px;
+            }
+        }
+
+
     }
 
     @keyframes pulse {
@@ -427,7 +448,7 @@
     <!-- Navbar -->
     <div class="navbar">
         <input type="checkbox" name="color_changing_test" id="color_changing_test">
-        <label for="color_changing_test">change color font test</label>
+        <label for="color_changing_test" id="color_changing_test-label">change color test</label>
         <div class="navbar__container">
             <div class="navbar__logo">
                 <img src="image/logo/JBv2_shadow.png" class="navbar__logo--img" alt="">
@@ -551,6 +572,8 @@
             pos.style.setProperty('--light-color-a', '#ffffff36')
             pos.style.setProperty('--light-color-b', '#ffffff6e')
 
+            pos.style.setProperty('--color-changing-text', 'black')
+
         } else {
             // console.log('unchecked')
             setDefaultStyle()
@@ -562,5 +585,7 @@
 
         pos.style.setProperty('--light-color-a', '#30344073')
         pos.style.setProperty('--light-color-b', '#1c1d1fd9')
+
+        pos.style.setProperty('--color-changing-text', 'white')
     }
 </script>
