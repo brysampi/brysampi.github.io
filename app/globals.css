@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +24,78 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+:root {
+  --color_main: #ffe59e;
+  --color_main-sub: #ffe59ea4;
+  --color_highligt: #ffc962;
+  --color_active: #ff8f00;
+  --color_backGround: #2f2822;
+  --color_tag-backGround: #6f3e00e8;
+  --color_tag-color: #ff8f00;
+  /* lowest laptop resolution */
+  --main_card-width: 1024px;
+  /* deduct to card width to still get the lowest resolution for laptop */
+  --main_card-padding: 50px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  color: var(--color_main);
+  font-family: helvetica;
+  background-color: var(--color_backGround);
+}
+
+.midSection_card {
+  width: calc(var(--main_card-width) - var(--main_card-padding));
+  padding: var(--main_card-padding);
+  height: 100000px;
+
+  & section:not(:first-child) {
+    padding: 15px;
+
+    &>p:first-child {
+      color: var(--color_highligt);
+      font-weight: bold;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    &>p:first-child {
+      color: var(--color_highligt);
+      font-weight: bold;
+      font-size: 15px;
+
+      &::before {
+        content: " ";
+        height: 1px;
+        width: 90%;
+        /* background: red; */
+        display: block;
+        position: relative;
+        top: 10px;
+        background: linear-gradient(to right, rgb(129, 128, 120) 80%, transparent 100%);
+        opacity: .4;
+      }
+
+      &::after,
+      span {
+        content: " ";
+        background-color: var(--color_backGround);
+        position: relative;
+        z-index: 1;
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+.highlight {
+  color: var(--color_highligt);
+}
+
+.highlight-sub {
+  color: var(--color_main-sub);
 }
