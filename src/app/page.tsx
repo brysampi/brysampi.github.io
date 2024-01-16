@@ -21,14 +21,14 @@ export default function Home() {
           </section>
           {/* Experience */}
           <section>
-            <p>Experience</p>
+            <p><span>EXPERIENCE</span></p>
             {/* Experience Card */}
-            <a href="" className='p-[20px] rounded-md flex flex-nowrap align-baseline'>
-              <div className='highlight-sub min-w-[120px] max-w-[120px] pr-[20px] font-bold'>FEB 2023 - FEB 2024</div>
+            <a href="" className='experience_card '>
+              <div className='experience_card-year'>FEB 2023 - FEB 2024</div>
               <div>
-                <p className='highlight font-bold mb-0'>Web Development Engineer</p>
-                <p className='highlight-sub mt-0'>St.Dominic College of Asia</p>
-                <div className='pl-4 pr-4'>
+                <p className='experience_card-title'>Web Development Engineer</p>
+                <p className='experience_card-title_sub'>St.Dominic College of Asia</p>
+                <div className='experience_card-desc'>
                   <p>Used the Codeigniter 3 Framework to create a variety of websites for students and staff.</p>
                   <p>All prior system modules (.NET) should be converted to a web-based system.</p>
                   <p>I am one of the programmers that construct the DOSE (Dominican One Stop Enrollment) / Admission portal, which students utilize to enroll themselves.</p>
@@ -44,12 +44,12 @@ export default function Home() {
               </div>
             </a>
             {/* Repeat Experience Card */}
-            <a href="" className='p-[20px] rounded-md flex flex-nowrap align-baseline'>
-              <div className='highlight-sub min-w-[120px] max-w-[120px] pr-[20px] font-bold'>FEB 2021 - FEB 2023</div>
+            <a href="" className='experience_card'>
+              <div className='experience_card-year'>FEB 2021 - FEB 2023</div>
               <div>
-                <p className='highlight font-bold mb-0'>Intern : Web Developer</p>
-                <p className='highlight-sub mt-0'>TSPG IT Solutions</p>
-                <div className='pl-4 pr-4'>
+                <p className='experience_card-title'>Intern : Web Developer</p>
+                <p className='experience_card-title_sub'>TSPG IT Solutions</p>
+                <div className='experience_card-desc'>
                   <p>Developed different websites with software division team for clients using Symfony 3 framework.</p>
                   <div className='div_tag'>
                     <div>CodeIgniter</div>
@@ -63,14 +63,14 @@ export default function Home() {
             </a>
           </section>
           <section>
-            <p>PROJECTS</p>
-            <div className='w-full columns-2'>
+            <p><span>PROJECTS</span></p>
+            <div className='project_container'>
               {/* Project Card */}
-              <div className='projects_card'>
+              <div className='project_card'>
                 <img src="projects/onestop.png" alt="" />
-                <div className="projects_desc">
-                  <div className="title">Admission Portal</div>
-                  <div className="title_sub">Onestop · DOSE · Co-op</div>
+                <div className="project_card-desc">
+                  <div className="project_card-title">Admission Portal</div>
+                  <div className="project_card-title_sub">Onestop · DOSE · Co-op</div>
                   <div>
                     Collaborated with our three-person team to develop a one-stop enrollment solution that
                     allows students to sign up independently.
@@ -85,11 +85,11 @@ export default function Home() {
                 </div>
               </div>
               {/* Repeat Project Card */}
-              <div className='projects_card'>
+              <div className='project_card'>
                 <img src="projects/webdose.png" alt="" />
-                <div className="projects_desc">
-                  <div className="title">WebDose</div>
-                  <div className="title_sub">Maintenance · Update · Co-op</div>
+                <div className="project_card-desc">
+                  <div className="project_card-title">WebDose</div>
+                  <div className="project_card-title_sub">Maintenance · Update · Co-op</div>
                   <div>
                     For convenient access from locations other than the premises, all modules from the local system have been converted to a web-based system.
                   </div>
@@ -102,11 +102,11 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className='projects_card'>
+              <div className='project_card'>
                 <img src="projects/application_form.png" alt="" />
-                <div className="projects_desc">
-                  <div className="title">Application Form</div>
-                  <div className="title_sub">DOSE · Co-op</div>
+                <div className="project_card-desc">
+                  <div className="project_card-title">Application Form</div>
+                  <div className="project_card-title_sub">DOSE · Co-op</div>
                   <div>
                     Various forms that applicants can use to submit their personal data for the admissions process.
                   </div>
@@ -119,11 +119,11 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className='projects_card'>
+              <div className='project_card'>
                 <img src="projects/portal.png" alt="" />
-                <div className="projects_desc">
-                  <div className="title">Student Portal</div>
-                  <div className="title_sub">Maintenance · Update</div>
+                <div className="project_card-desc">
+                  <div className="project_card-title">Student Portal</div>
+                  <div className="project_card-title_sub">Maintenance · Update</div>
                   <div>
                     I've been entrusted with maintaining this system and adding and updating various features so that students can view their academic progress.
                   </div>
@@ -136,11 +136,11 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className='projects_card'>
+              <div className='project_card'>
                 <img src="projects/manipis.png" alt="" />
-                <div className="projects_desc">
-                  <div className="title">Manipis Lying in Clinic</div>
-                  <div className="title_sub">Capstone Project</div>
+                <div className="project_card-desc">
+                  <div className="project_card-title">Manipis Lying in Clinic</div>
+                  <div className="project_card-title_sub">Capstone Project</div>
                   <div>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos facilis perspiciatis voluptate, odit, exercitationem earum porro velit accusantium nisi nostrum et dolorem possimus assumenda natus dignissimos maxime esse, quaerat explicabo.
                   </div>
