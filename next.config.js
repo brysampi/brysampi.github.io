@@ -2,7 +2,7 @@
 
 // https://nextjs.org/docs/pages/building-your-application/deploying/static-exports
 const nextConfig = {
-    output: 'export',
+    output: 'build',
 }
 
 module.exports = nextConfig
