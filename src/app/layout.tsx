@@ -14,6 +14,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  
   return (
     <html lang="en">
       <link rel="shortcut icon" href="logos/JBv2_shadow.png" />

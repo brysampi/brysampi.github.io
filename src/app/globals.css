@@ -33,7 +33,7 @@ body {
   --color_highligt: #ffc962;
   --color_active: #ff8f00;
   --color_backGround: #2f2822;
-  --color_backGround-light: #85552b;
+  --color_backGround-light: #573c24;
   --color_tag-backGround: #6f3e00e8;
   --color_tag-color: #ff8f00;
   /* lowest laptop resolution */
@@ -111,6 +111,18 @@ body {
     &::before {
       background-color: var(--color_active);
     }
+  }
+}
+
+.change_color {
+  background-color: var(--color_backGround-light);
+  & img {
+
+  }
+
+  & .popup {
+
+    & .popup-1 {}
   }
 }
 
@@ -280,7 +292,7 @@ body {
       display: flex;
       align-items: center;
       flex-direction: column;
-      
+
       & .project_card-desc {
         position: relative;
         opacity: 1;
