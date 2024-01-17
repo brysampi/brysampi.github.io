@@ -67,7 +67,7 @@ export default function Home() {
             <div className='project_container'>
               {/* Project Card */}
               <div className='project_card'>
-                <img src="projects/onestop.png" alt="" />
+                <Image src="projects/onestop.png" alt="" />
                 <div className="project_card-desc">
                   <div className="project_card-title">Admission Portal</div>
                   <div className="project_card-title_sub">Onestop · DOSE · Co-op</div>
@@ -86,7 +86,7 @@ export default function Home() {
               </div>
               {/* Repeat Project Card */}
               <div className='project_card'>
-                <img src="projects/webdose.png" alt="" />
+                <Image src="projects/webdose.png" alt="" />
                 <div className="project_card-desc">
                   <div className="project_card-title">WebDose</div>
                   <div className="project_card-title_sub">Maintenance · Update · Co-op</div>
@@ -103,7 +103,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='project_card'>
-                <img src="projects/application_form.png" alt="" />
+                <Image src="projects/application_form.png" alt="" />
                 <div className="project_card-desc">
                   <div className="project_card-title">Application Form</div>
                   <div className="project_card-title_sub">DOSE · Co-op</div>
@@ -120,7 +120,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='project_card'>
-                <img src="projects/portal.png" alt="" />
+                <Image src="projects/portal.png" alt="" />
                 <div className="project_card-desc">
                   <div className="project_card-title">Student Portal</div>
                   <div className="project_card-title_sub">Maintenance · Update</div>
@@ -137,7 +137,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='project_card'>
-                <img src="projects/manipis.png" alt="" />
+                <Image src="projects/manipis.png" alt="" />
                 <div className="project_card-desc">
                   <div className="project_card-title">Manipis Lying in Clinic</div>
                   <div className="project_card-title_sub">Capstone Project</div>
