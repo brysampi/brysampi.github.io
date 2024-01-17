@@ -15,25 +15,25 @@ export default function Home() {
           {/* About */}
           <section>
             <p className="pb-1"><span>ABOUT</span></p>
-            <p className="pt-2 pb-2">I'm a web developer who has a strong passion for creating digital experiences. I've had the privilege of constructing web projects for a School to make things simple for students, from enrollment to subject management.</p>
-            <p className="pt-2 pb-2">I began my career as a web developer when I recognised the magic of writing code that brings websites to life. The creative process of turning ideas into interactive, visually beautiful realities is what I find most intriguing about web development. Over the years, I've honed my skills in front-end and back-end technologies like HTML, CSS, JavaScript, and PHP.</p>
-            <p className="pt-2 pb-2">I appreciate you visiting my webpage. Please feel free to look through my portfolio and get in touch if you have any questions or would want to discuss a project or share your ideas. Together, let's make your web vision a reality.</p>
+            <p className="pt-2 pb-2">I&apos;m a web developer who has a strong passion for creating digital experiences. I&apos;ve had the privilege of constructing web projects for a School to make things simple for students, from enrollment to subject management.</p>
+            <p className="pt-2 pb-2">I began my career as a web developer when I recognised the magic of writing code that brings websites to life. The creative process of turning ideas into interactive, visually beautiful realities is what I find most intriguing about web development. Over the years, I&apos;ve honed my skills in front-end and back-end technologies like HTML, CSS, JavaScript, and PHP.</p>
+            <p className="pt-2 pb-2">I appreciate you visiting my webpage. Please feel free to look through my portfolio and get in touch if you have any questions or would want to discuss a project or share your ideas. Together, let&apos;s make your web vision a reality.</p>
           </section>
           {/* Experience */}
           <section>
             <p><span>EXPERIENCE</span></p>
             {/* Experience Card */}
-            <a href="" className='experience_card '>
-              <div className='experience_card-year'>FEB 2023 - FEB 2024</div>
+            <a href="" className="experience_card ">
+              <div className="experience_card-year">FEB 2023 - FEB 2024</div>
               <div>
-                <p className='experience_card-title'>Web Development Engineer</p>
-                <p className='experience_card-title_sub'>St.Dominic College of Asia</p>
-                <div className='experience_card-desc'>
+                <p className="experience_card-title">Web Development Engineer</p>
+                <p className="experience_card-title_sub">St.Dominic College of Asia</p>
+                <div className="experience_card-desc">
                   <p>Used the Codeigniter 3 Framework to create a variety of websites for students and staff.</p>
                   <p>All prior system modules (.NET) should be converted to a web-based system.</p>
                   <p>I am one of the programmers that construct the DOSE (Dominican One Stop Enrollment) / Admission portal, which students utilize to enroll themselves.</p>
                   <p>When there is a system upgrade, works with the team to develop presentations for my task.</p>
-                  <div className='div_tag'>
+                  <div className="div_tag">
                     <div>CodeIgniter</div>
                     <div>PHP</div>
                     <div>SCSS/CSS</div>
@@ -44,14 +44,14 @@ export default function Home() {
               </div>
             </a>
             {/* Repeat Experience Card */}
-            <a href="" className='experience_card'>
-              <div className='experience_card-year'>FEB 2021 - FEB 2023</div>
+            <a href="" className="experience_card">
+              <div className="experience_card-year">FEB 2021 - FEB 2023</div>
               <div>
-                <p className='experience_card-title'>Intern : Web Developer</p>
-                <p className='experience_card-title_sub'>TSPG IT Solutions</p>
-                <div className='experience_card-desc'>
+                <p className="experience_card-title">Intern : Web Developer</p>
+                <p className="experience_card-title_sub">TSPG IT Solutions</p>
+                <div className="experience_card-desc">
                   <p>Developed different websites with software division team for clients using Symfony 3 framework.</p>
-                  <div className='div_tag'>
+                  <div className="div_tag">
                     <div>CodeIgniter</div>
                     <div>PHP</div>
                     <div>SCSS/CSS</div>
@@ -64,9 +64,9 @@ export default function Home() {
           </section>
           <section>
             <p><span>PROJECTS</span></p>
-            <div className='project_container'>
+            <div className="project_container">
               {/* Project Card */}
-              <div className='project_card'>
+              <div className="project_card">
                 <Image src="projects/onestop.png" alt="" />
                 <div className="project_card-desc">
                   <div className="project_card-title">Admission Portal</div>
@@ -85,7 +85,7 @@ export default function Home() {
                 </div>
               </div>
               {/* Repeat Project Card */}
-              <div className='project_card'>
+              <div className="project_card">
                 <Image src="projects/webdose.png" alt="" />
                 <div className="project_card-desc">
                   <div className="project_card-title">WebDose</div>
@@ -102,7 +102,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className='project_card'>
+              <div className="project_card">
                 <Image src="projects/application_form.png" alt="" />
                 <div className="project_card-desc">
                   <div className="project_card-title">Application Form</div>
@@ -119,13 +119,13 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className='project_card'>
+              <div className="project_card">
                 <Image src="projects/portal.png" alt="" />
                 <div className="project_card-desc">
                   <div className="project_card-title">Student Portal</div>
                   <div className="project_card-title_sub">Maintenance · Update</div>
                   <div>
-                    I've been entrusted with maintaining this system and adding and updating various features so that students can view their academic progress.
+                    I&apos;ve been entrusted with maintaining this system and adding and updating various features so that students can view their academic progress.
                   </div>
                   <div className="div_tag">
                     <div>PHP</div>
@@ -136,7 +136,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className='project_card'>
+              <div className="project_card">
                 <Image src="projects/manipis.png" alt="" />
                 <div className="project_card-desc">
                   <div className="project_card-title">Manipis Lying in Clinic</div>
