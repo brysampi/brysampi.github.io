@@ -186,7 +186,7 @@ body {
 }
 
 .project_container {
-  @apply w-full columns-1 md:columns-2 mt-7 flex flex-col items-center;
+  @apply w-full columns-1 md:columns-2 mt-7 flex md:block flex-col items-center;
 
   & .project_card {
     @apply h-auto max-w-[460px] md:max-w-none max-h-[520px] md:max-h-none rounded-xl mb-4 flex md:block justify-center items-center overflow-hidden relative;
@@ -278,8 +278,9 @@ body {
   .project_container {
     & .project_card {
       display: flex;
+      align-items: center;
       flex-direction: column;
-
+      
       & .project_card-desc {
         position: relative;
         opacity: 1;
