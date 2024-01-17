@@ -53,17 +53,9 @@ body {
 .midSection_card {
   width: calc(var(--main_card-width) - var(--main_card-padding));
   padding: var(--main_card-padding);
-  /* height: 100000px; */
 
   & section:not(:first-child) {
     padding: 15px;
-
-    /* &>p:first-child {
-      color: var(--color_highligt);
-      font-weight: bold;
-      font-size: 15px;
-      margin: 0;
-    } */
 
     &>p:first-child {
       color: var(--color_highligt);
@@ -103,8 +95,49 @@ body {
   color: var(--color_main-sub);
 }
 
+.side_social-1 {
+  @apply fixed hidden lg:block top-0 xl:left-20 lg:left-7;
+
+  & div {
+    @apply flex flex-col items-center before:content-[''] before:block before:h-20 before:w-px;
+
+    & p {
+      -webkit-writing-mode: vertical-rl;
+      writing-mode: vertical-rl;
+      color: var(--color_highligt);
+      padding-top: 10px;
+    }
+
+    &::before {
+      background-color: var(--color_active);
+    }
+  }
+}
+
+.side_social-2 {
+  @apply fixed hidden lg:block bottom-0 xl:left-20 lg:left-5;
+
+  & ul {
+    @apply flex flex-col items-center after:content-[''] after:block after:h-20 after:w-px;
+
+    & li {
+      filter: invert(90%);
+    }
+
+    &::after {
+      background-color: var(--color_active);
+    }
+
+
+  }
+}
+
+
+
+
+
 .div_tag {
-  @apply flex flex-wrap;
+  @apply flex flex-wrap mt-3;
 
   & div {
     color: var(--color_tag-color);
@@ -117,7 +150,17 @@ body {
 }
 
 .experience_card {
-  @apply p-[20px] rounded-md block md:flex flex-nowrap align-baseline;
+  @apply p-[20px] pt-3 rounded-md block md:flex flex-nowrap align-baseline;
+
+  &>:not(:first-child) {
+    & div p {
+      margin: 10px 0;
+
+      &::before {
+        content: '· ';
+      }
+    }
+  }
 
   & .experience_card-year {
     @apply highlight-sub md:min-w-[120px] min-w-0 md:max-w-[120px] max-w-full pr-[20px] font-bold;
@@ -148,7 +191,7 @@ body {
   & .project_card {
     @apply h-auto max-w-[460px] md:max-w-none max-h-[520px] md:max-h-none rounded-xl mb-4 flex md:block justify-center items-center overflow-hidden relative;
 
-    & img {
+    & project_card-image {
       @apply w-full md:w-[700px] max-w-none;
     }
 
@@ -205,26 +248,37 @@ body {
     & section:not(:first-child) {
       padding: 5px;
     }
+
+    section {
+      margin-bottom: 50px;
+    }
   }
+
+  /* .side_social{
+    display: none;
+  } */
 
   .experience_card {
-    padding: 10px;
+    padding: 0px;
+    margin-top: 30px;
+
+    & .experience_card-year,
+    & .experience_card-title_sub {
+      margin-bottom: 5px;
+      font-size: smaller;
+    }
   }
 
-  /* .project_container {
-    & .project_card {
-      & .project_card-desc {
+  .experience_card:hover {
+    background: none;
+    box-shadow: none;
 
-      }
-    }
-  } */
+  }
 
   .project_container {
     & .project_card {
       display: flex;
       flex-direction: column;
-      
-      & img {}
 
       & .project_card-desc {
         position: relative;
@@ -235,66 +289,7 @@ body {
           transform: translateY(0);
         }
 
-
-
-        & .project_card-title {}
-
-        & .project_card-title_sub {}
-
       }
     }
   }
 }
-
-/* @media only screen and (max-width:768px) {
-  & .projects_container {
-    column-count: 1;
-  }
-} */
-
-/* 
-@media only screen and (max-width:1023px) {
-
-  & .projects {
-    & .projects_container {
-      column-count: 1 !important;
-
-      & .projects_card {
-        max-width: none;
-        max-height: none;
-        width: 100%;
-
-        & img {
-          width: 100%;
-          height: 400px;
-          object-fit: cover;
-        }
-
-
-      }
-    }
-  }
-}
-
-Custom
-@media only screen and (max-width:525px) {
-
-  .projects_card {
-    flex-direction: column;
-
-    & img {
-      height: auto !important;
-      width: 100%;
-    }
-
-    & .projects_desc {
-      position: relative !important;
-      opacity: 1 !important;
-      background: var(--color_backGround-light) !important;
-
-      &>div {
-        transform: translateY(0) !important;
-      }
-    }
-  }
-} */

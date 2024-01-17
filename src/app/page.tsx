@@ -3,11 +3,32 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <main>
+      <div className="side_social-1">
+        <div>
+          <p>bryansampiano@gmail.com</p>
+        </div>
+
+      </div>
+      <div className="side_social-2">
+        <ul>
+          <li>
+            <a href="https://github.com/brysampi" target="_blank">
+              <img src="svg/github-512-filled.svg" alt="" width={50} height={50} className='p-2' />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/bryansampiano/" target="_blank">
+              <img src="svg/linkedin-500-filled.svg" alt="" width={50} height={50} className='p-2' />
+            </a>
+          </li>
+        </ul>
+      </div>
+
       <div className="midSection flex justify-center">
         <div className="midSection_card">
           {/* Info */}
           <section>
-            <div className="highlight text-[40px] font-bold">John Bryan Sampiano</div>
+            <div className="highlight text-[40px] font-bold">JOHN BRYAN SAMPIANO</div>
             <div className="highlight-sub text-[20px]  font-medium">but you can call me <span className="highlight">BELL</span></div>
             <div className="highlight mt-[20px] mb-[20px] text-[20px]  font-medium">Web Developer</div>
             <div className="highlight-sub mb-4">As a web developer, building digital experiences is very close to my heart.</div>
@@ -67,7 +88,10 @@ export default function Home() {
             <div className="project_container">
               {/* Project Card */}
               <div className="project_card">
-                <Image src="projects/onestop.png" alt="" />
+                <div className='relative'>
+                  <img fill className="project_card-image" src="projects/onestop.png" alt="" />
+                </div>
+
                 <div className="project_card-desc">
                   <div className="project_card-title">Admission Portal</div>
                   <div className="project_card-title_sub">Onestop · DOSE · Co-op</div>
@@ -86,7 +110,7 @@ export default function Home() {
               </div>
               {/* Repeat Project Card */}
               <div className="project_card">
-                <Image src="projects/webdose.png" alt="" />
+                <img fill className="project_card-image" src="projects/webdose.png" alt="" />
                 <div className="project_card-desc">
                   <div className="project_card-title">WebDose</div>
                   <div className="project_card-title_sub">Maintenance · Update · Co-op</div>
@@ -103,7 +127,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="project_card">
-                <Image src="projects/application_form.png" alt="" />
+                <img fill className="project_card-image" src="projects/application_form.png" alt="" />
                 <div className="project_card-desc">
                   <div className="project_card-title">Application Form</div>
                   <div className="project_card-title_sub">DOSE · Co-op</div>
@@ -120,7 +144,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="project_card">
-                <Image src="projects/portal.png" alt="" />
+                <img fill className="project_card-image" src="projects/portal.png" alt="" />
                 <div className="project_card-desc">
                   <div className="project_card-title">Student Portal</div>
                   <div className="project_card-title_sub">Maintenance · Update</div>
@@ -137,7 +161,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="project_card">
-                <Image src="projects/manipis.png" alt="" />
+                <img fill className="project_card-image" src="projects/manipis.png" alt="" />
                 <div className="project_card-desc">
                   <div className="project_card-title">Manipis Lying in Clinic</div>
                   <div className="project_card-title_sub">Capstone Project</div>
@@ -152,6 +176,11 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </section>
+          <section>
+            <div>
+              <p>Coded in <a href="https://code.visualstudio.com" className='highlight'>Visual Studio Code</a>. Build with <a href="https://nextjs.org" className='highlight'>Next.js</a> and <a href="https://tailwindcss.com" className='highlight'>Tailwind CSS</a>, deployed with <a href="https://pages.github.com" className='highlight'>Github pages</a>.</p>
             </div>
           </section>
         </div>

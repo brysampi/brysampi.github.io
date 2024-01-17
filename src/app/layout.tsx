@@ -16,6 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <link rel="shortcut icon" href="logos/JBv2_shadow.png" />
       <body className={inter.className}>{children}</body>
     </html>
   )
