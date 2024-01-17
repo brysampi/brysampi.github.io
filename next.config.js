@@ -4,6 +4,10 @@
 const nextConfig = {
     // trailingSlash: true,
     output: 'export',
+    images: {
+        loader: 'custom',
+        loaderFile: './my-loader.ts',
+      },
 }
 
 module.exports = nextConfig
