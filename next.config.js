@@ -5,9 +5,8 @@ const nextConfig = {
     // trailingSlash: true,
     output: 'export',
     images: {
-        loader: 'custom',
-        loaderFile: './my-loader.ts',
-      },
+        unoptimized: true
+    }
 }
 
 module.exports = nextConfig
