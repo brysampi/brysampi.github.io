@@ -66,7 +66,7 @@ export default function Home() {
             <p><span>PROJECTS</span></p>
             <div className='project_container'>
               {/* Project Card */}
-              <div className='project_card'>
+              {/* <div className='project_card'>
                 <img src="projects/onestop.png" alt="" />
                 <div className="project_card-desc">
                   <div className="project_card-title">Admission Portal</div>
@@ -83,9 +83,9 @@ export default function Home() {
                     <div>JQuery</div>
                   </div>
                 </div>
-              </div>
+              </div> */}
               {/* Repeat Project Card */}
-              <div className='project_card'>
+              {/* <div className='project_card'>
                 <img src="projects/webdose.png" alt="" />
                 <div className="project_card-desc">
                   <div className="project_card-title">WebDose</div>
@@ -135,7 +135,7 @@ export default function Home() {
                     <div>JQuery</div>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className='project_card'>
                 <img src="projects/manipis.png" alt="" />
                 <div className="project_card-desc">
