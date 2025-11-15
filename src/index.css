@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+@theme{
+  /* --color-dark-bg: #242424; */
+}
 /* :roo t {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
