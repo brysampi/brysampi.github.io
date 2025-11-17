@@ -17,11 +17,13 @@
 }
 
 @keyframes pulse-yellow {
+
   0%,
   100% {
     transform: scale(1);
     opacity: 0.3;
   }
+
   50% {
     transform: scale(.8);
     opacity: 0.2;
@@ -29,22 +31,39 @@
 }
 
 @keyframes pulse-white {
+
   0%,
   100% {
     transform: scale(1);
     opacity: 0.2;
   }
+
   50% {
     transform: scale(.8);
     opacity: 0.1;
   }
 }
 
+@keyframes fade-out-up {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(-50%, -150%) scale(1.5);
+    /* Move up and scale up */
+  }
+}
+
 html,
 body {
   color: var(--color-text-primary);
-  position: relative; /* Needed for the ::before pseudo-element */
-  overflow-x: hidden; /* Prevent horizontal scrollbars from scaled circles */
+  position: relative;
+  /* Needed for the ::before pseudo-element */
+  overflow-x: hidden;
+  /* Prevent horizontal scrollbars from scaled circles */
 }
 
 html::before {
@@ -56,103 +75,91 @@ html::before {
   width: 100%;
   height: 100%;
   background-color: var(--color-dark-bg);
-  z-index: -2; /* Place it behind everything, including the pulsing circles */
+  z-index: -2;
+  /* Place it behind everything, including the pulsing circles */
 }
-
-
-/* :roo t {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
- */
 
 body::before,
 body::after {
   content: '';
   position: absolute;
-  width: 60vmin; /* <-- CHANGE SIZE HERE */
-  height: 60vmin; /* <-- AND HERE */
+  width: 60vmin;
+  /* <-- CHANGE SIZE HERE */
+  height: 60vmin;
+  /* <-- AND HERE */
   border-radius: 50%;
-  filter: blur(100px); /* Creates a very soft, diffused look */
-  z-index: -1; /* Place it behind the content, but in front of the html::before background */
+  filter: blur(100px);
+  /* Creates a very soft, diffused look */
+  z-index: -1;
+  /* Place it behind the content, but in front of the html::before background */
 }
 
 body::before {
   /* White Circle (now top-left) */
-  bottom: 20vh;   /* <-- CHANGE POSITION HERE */
-  right: 10vw;  /* <-- AND HERE */
+  bottom: 20vh;
+  /* <-- CHANGE POSITION HERE */
+  right: 10vw;
+  /* <-- AND HERE */
   background-color: var(--color-text-primary);
-  animation: pulse-white 15s ease-in-out infinite alternate;
+  animation: pulse-white 12s ease-in-out infinite alternate;
 }
 
 body::after {
   /* Yellow Circle (now bottom-right) */
-  top: 20vh; /* <-- CHANGE POSITION HERE */
-  left: 10vw;  /* <-- AND HERE */
+  top: 20vh;
+  /* <-- CHANGE POSITION HERE */
+  left: 10vw;
+  /* <-- AND HERE */
   background-color: var(--color-primary);
   animation: pulse-yellow 12s ease-in-out infinite;
+}
+
+@layer utilities {
+  .glass-pane {
+    /* Glassmorphism Effect */
+    background: color-mix(in srgb, var(--color-dark-surface), transparent 50%);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    /* Safari support */
+    border-radius: 16px;
+    border: 1px solid var(--color-dark-border);
+    /* Sizing and Margin */
+    margin: 20px;
+    /* min-height: 90vh;
+    min-width: 90vw; */
+  }
+
+  /* Utility to hide scrollbars */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+}
+ 
+@media (max-width: 640px) {
+
+  body::before,
+  body::after {
+    width: 40vmin;
+    /* Adjust size for smaller screens */
+    height: 40vmin;
+  }
+
+  body::before {
+    bottom: 10vh;
+    /* Adjust position for smaller screens */
+    right: 30vw;
+  }
+
+  body::after {
+    top: 10vh;
+    /* Adjust position for smaller screens */
+    left: 30vw;
+  }
 }

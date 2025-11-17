@@ -6,7 +6,6 @@ import FullPage from './template/FullPage'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {/* <App /> */}
     <FullPage />
   </StrictMode>,
 )
