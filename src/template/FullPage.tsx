@@ -1,6 +1,6 @@
 import HeroHeader from '../components/HeroHeading';
 import GameHUD from '../components/GameHUD';
-
+import ClickCounter from '../components/ClickCounter';
 const FullPage = () => {
     return (
         <>
@@ -24,6 +24,7 @@ const FullPage = () => {
                 </section>
             </div>
             <GameHUD sectionIds={['s1', 's2', 's3', 's4']} scrollContainerId="snap-container" />
+            <ClickCounter />
         </>
     )
 }
