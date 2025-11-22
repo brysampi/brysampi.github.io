@@ -34,7 +34,7 @@ const GameHUD = ({ sectionIds, scrollContainerId }: GameHUDProps) => {
     }, [sectionIds, scrollContainerId]);
 
     return (
-        <nav className="fixed bottom-2 left-1/2 z-50 flex -translate-x-1/2 gap-0.5 rounded p-0.5 sm:bottom-5 sm:gap-1 sm:p-1">
+        <nav id="game-hud" className="fixed bottom-2 left-1/2 z-50 flex -translate-x-1/2 gap-0.5 rounded p-0.5 sm:bottom-5 sm:gap-1 sm:p-1">
             {sectionIds.map((id, index) => (
                 <a
                     key={id}

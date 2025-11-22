@@ -61,6 +61,12 @@ const ClickCounter = () => {
     }, [FADE_OUT_DURATION_MS]);
 
     const handleClick = useCallback((e: MouseEvent) => {
+        // Check if the click target is within the GameHUD
+        const target = e.target as HTMLElement;
+        if (target.closest('#game-hud')) {
+            return;
+        }
+
         // Clear and reset inactivity timer
         clearTimeout(inactivityTimer.current);
         inactivityTimer.current = window.setTimeout(() => setCounter(0), RESET_INACTIVITY_MS);
