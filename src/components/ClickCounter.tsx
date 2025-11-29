@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useGame } from '../context/GameContext';
 
 const ClickCounter = () => {
     const [_counter, setCounter] = useState(0);
     const [_totalClicks, setTotalClicks] = useState(0);
-    const inactivityTimer = React.useRef<number>();
+    const inactivityTimer = React.useRef<number | undefined>(undefined);
+    const { completeAchievement } = useGame();
 
     const FADE_OUT_DURATION_MS = 1000; // Duration for both fade and upward motion
     const RESET_INACTIVITY_MS = 1000; // Time after which the counter resets due to inactivity
@@ -71,7 +73,7 @@ const ClickCounter = () => {
         clearTimeout(inactivityTimer.current);
         inactivityTimer.current = window.setTimeout(() => setCounter(0), RESET_INACTIVITY_MS);
 
-        // Update total persistent count
+    // Update total persistent count
         setTotalClicks(prevTotal => {
             const newTotal = prevTotal + 1;
             localStorage.setItem('totalClicks', newTotal.toString());
@@ -85,6 +87,13 @@ const ClickCounter = () => {
             return newCount;
         });
     }, [RESET_INACTIVITY_MS, createNumberAnimation]);
+
+    // Check for achievement (ID 2: Clicker - 10 clicks)
+    useEffect(() => {
+        if (_totalClicks >= 10) {
+            completeAchievement(2);
+        }
+    }, [_totalClicks, completeAchievement]);
 
     useEffect(() => {
         document.addEventListener('click', handleClick);
